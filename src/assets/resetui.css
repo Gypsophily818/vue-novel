@@ -1,0 +1,139 @@
+/* 顶部内边距 */
+.van-nav-bar__left,
+.van-nav-bar__right {
+	padding: 5px;
+}
+
+/* 输入框边框 */
+.van-search {
+	background-color: transparent;
+}
+
+/* 上下滑块背景 */
+.search .van-search__content {
+	border-radius: 6px;
+	background-color: #fff;
+	/* border: 2px solid slateblue; */
+}
+
+
+/* 上下滑块字体 */
+
+.van-swipe__track .van-swipe-item {
+	text-align: center;
+	color: #999;
+	font-size: 12px;
+}
+
+/* nav-left */
+.van-nav-bar .van-icon {
+	color: #33373d;
+}
+
+#nav-header,
+.book-nav-header .van-nav-bar .van-nav-bar__content .van-nav-bar__left .van-nav-bar__text,
+.van-hairline--bottom .van-nav-bar__content .van-nav-bar__left .van-nav-bar__text {
+	color: #33373d;
+	font-size: 14px;
+}
+
+
+/* book里的nav-left */
+#book .my-nav .book-nav-header,
+.van-nav-bar,
+.van-hairline--bottom,
+.van-nav-bar__content,
+.van-nav-bar__left,
+.van-nav-bar__text {
+	color: #33373d;
+	font-size: 14px;
+	padding: 0px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/* list 阅读列表 */
+.van-cell {
+	/* position: relative;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px 16px;
+	overflow: hidden;
+	color: #323233;
+	font-size: 16px;
+	line-height: 24px; */
+	background-color: #fff;
+	/* background-color: #c4b395; */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+	padding: 0;
+}
+
+/* 加载章节中,正在加载的背景颜色 */
+.van-loading,
+.van-loading--circular {
+	height: 100vh;
+	/* width: 100vw; */
+	/* background-color: #c4b395; */
+}
+
+.header .van-nav-bar .van-nav-bar__content .van-nav-bar__left .head-text[data-v-58b91708],
+.header .van-hairline--bottom .van-nav-bar__content .van-nav-bar__left .head-text[data-v-58b91708] {
+	margin-left: 10px;
+}
+
+/* 阅读右边侧栏 */
+.van-index-bar__sidebar {
+	display: none;
+}
+
+/* 阅读页面书的标题 */
+.van-index-anchor {
+	/* background-color: #c4b395; */
+	min-width: 30px;
+	margin: 0;
+	padding: 0;
+	font-size: .75rem;
+	font-weight: 400;
+	color: rgba(0, 0, 0, .4);
+}
+
+/* 阅读页面底部左下箭头 */
+.van-icon-arrow {
+	display: none;
+}
+
+.van-icon-arrow::before {
+	color: transparent;
+	display: none;
+}
+
+/*  */
+.van-loading--spinner {
+	text-align: center;
+}
+
+.van-hairline--bottom::after {}
+
+/* 阅读padding */
+.van-cell--clickable {
+	display: block;
+}
+
+.van-cell__value .van-cell__value--alone {
+	padding: 0 15px;
+}
+
+/* pup弹出框底部 */
+.van-popup--bottom {
+	bottom: -1px;
+}
+
+/* pup弹出框颜色 top */
+#read-page .van-cell .van-cell--clickable .book-nav-header .van-nav-bar__content {
+	background-color: black;
+}
