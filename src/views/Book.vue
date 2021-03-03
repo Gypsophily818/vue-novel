@@ -57,9 +57,6 @@ export default {
           "https://novel.kele8.cn/book/reviews?book=" +
             to.params.id +
             "&sort=?&start=?&limit=?"
-          // "/post/review/by-book?book=" +
-          //   to.params.id +
-          //   "&sort=?&start=?&limit=?"
         )
         .then((response) => {
           // console.log("书籍长评", response.data.reviews);

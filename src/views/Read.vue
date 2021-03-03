@@ -148,58 +148,6 @@ export default {
   },
   methods: {
     ...mapMutations(["addBookrack", "removeBookrack", "updateReadHistory"]),
-    // getList(index, symble) {
-    //   console.log(index, symble);
-    //   this.loading = true;
-
-    //   // console.log("currentChapter-index", this.currentChapter);
-    //   this.axios
-    //     .get(
-    //       "http://novel.kele8.cn/chapters/" +
-    //         // encodeURIComponent(this.chapter.chapters[this.currentChapter].link)
-    //         encodeURIComponent(this.chapter[this.currentChapter].link)
-    //     )
-    //     .then((res) => {
-    //       console.log("获取章节内容", res.data.chapter);
-    //       if (res.data.chapter.isVip) {
-    //         return (this.isVip = "需要VIP才能解锁喔~");
-    //       }
-    //       this.list.push(res.data.chapter);
-    //       this.content = res.data.chapter;
-    //       // console.log("methods--getList==>content", this.content);
-    //       // console.log(this.$route.params.id);
-    //       // console.log(this.currentChapter);
-
-    //       // 加载状态结束
-    //       // this.currentChapter += 1;
-    //       this.loading = false;
-
-    //       // console.log("当前章节节", this.currentChapter);
-    //       // this.$store.commit("updatechapterCounter", this.currentChapter);
-    //       // 记录阅读历史
-    //       this.updateReadHistory({
-    //         bookID: this.$route.params.id,
-    //         historyChapter: this.currentChapter,
-    //       });
-    //       console.log("当前章节节", this.currentChapter);
-
-    //       // this.updateReadHistory(this.$route.params.id);
-    //     });
-    // },
-    // onLoad() {
-    //   // 异步更新数据
-    //   // setTimeout 仅做示例，真实场景中一般为 ajax 请求
-    //   this.timer = setTimeout(() => {
-
-    //     this.getList();
-
-    //     // 数据全部加载完成
-    //     if (this.list.length >= this.chapter.length) {
-    //       this.finished = true;
-    //     }
-    //     // this.currentChapter += 1;
-    //   }, 300);
-    // },
     getChapter() {
       this.axios
         .get(
@@ -218,27 +166,20 @@ export default {
             this.list[0].cpContent = "会员专享书籍，请开通会员";
           }
           // console.log("methods--getList==>content", this.content);
-          // console.log(this.$route.params.id);
-          // console.log(this.currentChapter);
 
           // 加载状态结束
           // this.currentChapter += 1;
           this.loading = false;
 
-          // console.log("当前章节节", this.currentChapter);
-          // this.$store.commit("updatechapterCounter", this.currentChapter);
           // 记录阅读历史
           this.updateReadHistory({
             bookID: this.$route.params.id,
             historyChapter: this.currentChapter,
           });
           console.log("当前章节节", this.currentChapter);
-
-          // this.updateReadHistory(this.$route.params.id);
         });
     },
     showPopup() {
-      // this.$store.commit("changeIsClickNav");
       this.show = !this.show;
       this.closeNav = false;
     },
@@ -255,14 +196,12 @@ export default {
     upLoadChapterID(e) {
       //传目录页面
       console.log("章节:", e);
-      // this.updateChapter(e - 1);
 
       console.log("当前阅读章节:", this.currentChapter);
       this.currentChapter = e - 1;
       console.log("要跳转章节索引:", this.currentChapter);
       this.list = []; //重置要渲染的数据
       //跳转章节
-      // this.getList(e - 1);
       this.getChapter(e - 1);
     },
     changeSunshine() {
@@ -275,14 +214,8 @@ export default {
         this.next_preBUtton = false;
       } else {
         this.currentChapter -= 1;
-        // 记录阅读历史
-        // this.updateReadHistory({
-        //   bookID: this.$route.params.id,
-        //   historyChapter: this.currentChapter,
-        // });
         this.list = []; //重置要渲染的数据
-        //跳转章节
-        // this.getList(this.currentChapter, "click");
+
         this.getChapter(this.currentChapter, "click");
         console.log(this.currentChapter);
       }
@@ -296,14 +229,9 @@ export default {
         console.log(this.list);
         this.currentChapter++;
         console.log(this.currentChapter);
-        // // 记录阅读历史
-        // this.updateReadHistory({
-        //   bookID: this.$route.params.id,
-        //   historyChapter: this.currentChapter,
-        // });
+
         this.list = []; //重置要渲染的数据
         // //跳转章节
-        // this.getList(this.currentChapter);
         this.getChapter(this.currentChapter, "click");
       }
     },
@@ -338,7 +266,6 @@ export default {
 
       console.log(vm);
       console.log(vm.ReadHistory);
-      // vm.ReadHistory.find(to.)
       // console.log(vm.ReadHistory[0].historyChapter);
       vm.axios
         .get(
@@ -363,8 +290,6 @@ export default {
               vm.currentChapter = to.query.readIndex;
               console.log(to.query.readIndex);
               console.log("currentChapter:", vm.currentChapter);
-              // vm.currentChapter = vm.ChapterID;
-              // vm.currentChapter = to.query.cIndex
               // vm.currentChapter = vm.chapterCounter;
 
               console.log("");
@@ -390,11 +315,8 @@ export default {
                     vm.list[0].cpContent = "会员专享，请开通会员";
                   }
                   // console.log("methods--getList==>content", vm.content);
-                  // console.log(vm.$route.params.id);
-                  // console.log(vm.currentChapter);
                   // 加载状态结束
                   vm.loading = false;
-                  // vm.currentChapter += 1;
                   console.log("当前章节节", vm.currentChapter);
                   // 记录阅读历史
                   vm.updateReadHistory({
@@ -421,20 +343,17 @@ export default {
 <style lang="scss">
 .read-page {
   .van-cell {
-    // height: 100vh;
     background: #c4b395;
     background: transparent;
   }
 
-  .van-index-anchor {
-    // background: #c4b395;
+  .van-cell__value .van-cell__value--alone {
+    height: 100vh;
+    background: #c4b395;
   }
 
   // bottom弹出框
   footer {
-    // background: black;
-    // color: white;
-
     padding: 8px;
     display: flex;
     justify-content: space-between;
